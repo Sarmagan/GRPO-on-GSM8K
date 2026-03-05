@@ -74,6 +74,14 @@ Step-by-step reasoning...
 | Optimizer | AdamW (TRL default) |
 | Decoding (eval) | Greedy (temperature=0) |
 
+--
+
+## Training Curve
+
+![Training Reward](training_reward.png)
+
+The total reward across ~1,100 training steps. The model starts with negative reward (random/unstructured outputs) and rapidly converges to a stable plateau around 8–9 by step ~100, indicating the reward functions are learned quickly. Variance throughout training is expected in GRPO — the model continuously explores different completions and reward fluctuations reflect harder batches or formatting misses. The sustained high reward in the later steps confirms the model has solidly learned both the structured format and correct mathematical reasoning.
+
 ---
 
 ## Results
